@@ -3,9 +3,15 @@
 <script src="data.js"></script>
 <script src="search.js"></script>
 <script src="ui.js"></script>
+<style>
+    .hit{color:red;} 
+    .emp{background:yellow;color:red}
+</style>
 <body>
 <input id="tofind" value="月"></input>
-<button onclick="dosearch()">Search</button>
+<a href="#" onclick="dosearch(this.innerHTML)">花</a>
+<a href="#" onclick="dosearch(this.innerHTML)">[鼠牛虎兔龍蛇馬羊猴雞狗豬]</a>
+<button onclick="dosearch(tofind.value)">Search</button>
 <div id="result"></div>
 </body>
 </html>
