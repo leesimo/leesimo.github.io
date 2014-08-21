@@ -11,6 +11,14 @@
 <input id="tofind" value="月"></input>
 <a href="#" onclick="dosearch(this.innerHTML)">花</a>
 <a href="#" onclick="dosearch(this.innerHTML)">[鼠牛虎兔龍蛇馬羊猴雞狗豬]</a>
+<a href="#" onclick="dosearch('(.)\1')">疊字搜尋</a>
+	兩組疊字搜尋
+<a href="#" onclick="dosearch(this.innerHTML)">(.)\1</a>
+	重複字搜尋
+<a href="#" onclick="dosearch(this.innerHTML)">(.).\1.</a>
+	<br><span id= "result_num"></span>
+	<br><div id="result"></div>
+
 <button onclick="dosearch(tofind.value)">Search</button>
 <div id="result"></div>
 </body>

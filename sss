@@ -1,0 +1,34 @@
+var glob=require("glob");
+var fs=require("fs")
+
+
+var processFile=function(fn){
+	var out=[];
+	var lines=fs.readFileSync(fn,"utf8").split("\n");
+    var key="成語&nbsp;";
+    var def="釋義&nbsp;";
+    var vol="注音&nbsp;";
+	for(var i=200;i<lines.length;i++){
+		var line=lines[i];
+		if(line.indexOf("<!--layoutclass_second-->")>-1)break;
+
+		line=line.replace(/<.*?>/g,"");
+
+		var keystart=line.indexOf(key);
+		var defstart=line.indexOf(def);
+        var volstart=line.indexOf(vol);
+		if(keystart>-1){
+			out.push('key:"'+line.substr(keystart+8)+'"');
+		}else if(defstart>-1){
+			out.push('def:"'+line.substr(defstart+9)+'"');
+		}
+	}
+	return "{"+out.join(",")+"}";
+}
+
+
+glob("cw-data/6000-6999/*.html",function(err,files){
+	var arr=files.map(processFile);
+	var output="var idioms=["+arr.join(",\n")+"]"
+	console.log(output);
+})
