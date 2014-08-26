@@ -1,0 +1,7 @@
+Var total=0
+For(var emptyline=0;emptyline<sutra[i];emptyline++)
+ {if (0= =sutra[i].length)} 
+For(var i=0;i<10;i++){total=tatal+0= =sutra[i].length}
+
+for(var emptyline=0;emptyline<sutra[i];emptyline++){if (0==sutra[i].length) emptyline++}
+for(var i=0;i<sutra[i];i++){if (0==sutra[i].length) {console.log(emptyline++)}

@@ -1,0 +1,40 @@
+<html>
+<style>
+ #result{font-size:200%;color:purple;}
+</style>
+<input id="o1" value="2"/>
+<input id="o2" value="3"/>
+<button onClick ="multiple()">*</button>
+<button onClick ="divide()">/</button>
+<button onClick ="add()">+</button>
+<button onClick ="substract()">-</button>
+<br/>
+<span id ="result">o</span>
+<script >
+var multiple=function(){
+	var o1=document.getElementById("o1").value;
+	var o2=document.getElementById("o2").value;
+
+	document.getElementById("result").innerHTML=o1*o2
+}
+var divide=function(){
+	var o1=document.getElementById("o1").value;
+	var o2=document.getElementById("o2").value;
+
+	document.getElementById("result").innerHTML=o1/o2
+}
+var add=function(){
+	var o1=parseInt(document.getElementById("o1").value);
+	var o2=parseInt(document.getElementById("o2").value);
+
+	document.getElementById("result").innerHTML=o1+o2
+}
+var substract=function(){
+	var o1=document.getElementById("o1").value;
+	var o2=document.getElementById("o2").value;
+
+	document.getElementById("result").innerHTML=o1-o2
+}
+</script>
+
+</html>
